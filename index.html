@@ -1,0 +1,1836 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <title>Invitación | Pedro y Nicole</title>
+
+
+
+
+   
+
+<!-- =========================================================-->
+
+
+
+
+   <!-- =========================================================
+       PREVIEW para  WhatsApp (Open Graph)
+       IMPORTANTE: og:image debe ser URL absoluta y existir.
+       No afecta tu CSS/JS; solo mejora el "preview".
+       ========================================================= -->
+        <!-- WhatsApp compatible Open Graph -->
+
+<!-- PREVIEW (WhatsApp / Facebook / Instagram) -->
+<meta property="og:title" content="Pedro y Nicole | Invitación de boda" />
+<meta property="og:description" content="Te invitamos a celebrar con nosotros. Toca para ver los detalles." />
+<meta property="og:url" content="https://gabriel-netizen-bit.github.io/invitacion-nicole/" />
+<meta property="og:type" content="website" />
+
+<!-- La imagen DEBE ser solo una -->
+<meta property="og:image" content="https://gabriel-netizen-bit.github.io/invitacion-nicole/assets/img/preview-v3.jpg" />
+<meta property="og:image:secure_url" content="https://gabriel-netizen-bit.github.io/invitacion-nicole/assets/img/preview-v2.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter (sirve también para algunos previews) -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://gabriel-netizen-bit.github.io/invitacion-nicole/assets/img/preview-v2.jpg" />
+
+    
+
+    <style>
+      /* =========================================================
+       0) VARIABLES (colores tipo Canva: dorado/beige + limpio)
+       ========================================================= */
+      :root {
+        --bg: #f6f2ee;
+        --card: #fbfaf8;
+        --border: #d8c9b8;
+        --accent: #b89b75;
+        --accent-2: #9e8463;
+        --text: #2a2520;
+        --muted: #6a6056;
+        --shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+        --radius: 22px;
+        --maxw: 560px;
+
+        /* Hero por JS (pero con fallback para que NUNCA se quede en blanco) */
+        --hero-url: url("assets/img/DSC05947.JPG");
+      }
+
+      /* =========================================================
+       1) BASE
+       ========================================================= */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: var(--text);
+        background: radial-gradient(
+          1200px 1200px at 50% 0%,
+          #ffffff 0%,
+          var(--bg) 52%,
+          #efe7df 100%
+        );
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .wrap {
+        width: 100%;
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 20px 14px 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      /* Tarjeta estilo Canva */
+      .card {
+        background: var(--card);
+        border: 2px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-inner {
+        padding: 18px 18px 20px;
+      }
+
+      .card-head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 2px solid var(--border);
+        display: grid;
+        place-items: center;
+        color: var(--accent);
+        background: #fff;
+        user-select: none;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 30px;
+        line-height: 1.1;
+        color: var(--accent);
+        font-weight: 650;
+        letter-spacing: 0.2px;
+        font-family: ui-serif, Georgia, "Times New Roman", serif;
+      }
+
+      .sub {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.4;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+      }
+
+      .line {
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--border),
+          transparent
+        );
+        margin: 12px 0;
+      }
+
+      .txt {
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        font-size: 15.5px;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      /* Botón dorado estilo Canva */
+      .btn {
+        appearance: none;
+        border: 0;
+        cursor: pointer;
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: var(--accent);
+        color: #fff;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        font-size: 16px;
+        font-weight: 650;
+        letter-spacing: 0.2px;
+        transition:
+          transform 0.06s ease,
+          filter 0.15s ease;
+      }
+      .btn:hover {
+        filter: brightness(0.97);
+      }
+      .btn:active {
+        transform: scale(0.99);
+      }
+
+      .btn.secondary {
+        background: transparent;
+        color: var(--accent-2);
+        border: 2px solid var(--border);
+      }
+
+      /* Inputs */
+      .field {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        border-bottom: 2px solid var(--border);
+        padding: 12px 6px;
+        font-size: 16px;
+        outline: none;
+        color: var(--text);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+      }
+      .field::placeholder {
+        color: #9b8e82;
+      }
+
+      .row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 12px 0 8px;
+      }
+
+      /* Radios estilo “pastilla” */
+      .choice {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        color: var(--muted);
+        font-size: 15px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        user-select: none;
+        cursor: pointer;
+      }
+      .choice input {
+        accent-color: var(--accent);
+      }
+      .choice:hover {
+        border-color: rgba(184, 155, 117, 0.35);
+      }
+
+      /* Badge / aviso */
+      .notice {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: #fff;
+        border: 1px solid rgba(216, 201, 184, 0.9);
+        color: var(--muted);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      /* =========================================================
+       2) HERO (Portada)
+       - Importante: ahora tiene fallback seguro (no se queda vacío)
+       ========================================================= */
+      .hero {
+        min-height: 560px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        background:
+          linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.52),
+            rgba(0, 0, 0, 0.12),
+            rgba(0, 0, 0, 0)
+          ),
+          var(--hero-url, url("assets/img/DSC05947.JPG"));
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .hero-content {
+        width: 100%;
+        padding: 18px 18px 18px;
+        text-align: center;
+        color: #fff;
+      }
+      .hero-title {
+        margin: 0;
+        font-size: 38px;
+        line-height: 1.05;
+        font-weight: 750;
+        letter-spacing: 0.2px;
+        font-family: ui-serif, Georgia, "Times New Roman", serif;
+      }
+      .hero-date {
+        margin: 10px 0 0;
+        font-size: 25px;
+        opacity: 0.92;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+      }
+
+      /* Cuenta regresiva estilo “reloj” simple */
+      .countdown {
+        margin-top: 14px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .cd-box {
+        min-width: 86px;
+        padding: 10px 10px 9px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(4px);
+      }
+      .cd-num {
+        font-family: ui-serif, Georgia, "Times New Roman", serif;
+        font-size: 26px;
+        font-weight: 800;
+        line-height: 1;
+      }
+      .cd-lab {
+        margin-top: 5px;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        font-size: 12px;
+        opacity: 0.9;
+        letter-spacing: 0.2px;
+      }
+
+      /* =========================================================
+       3) EVENTOS
+       ========================================================= */
+      .event-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .pill {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--accent-2);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        font-size: 12px;
+        background: #fff;
+      }
+      .event-box {
+        border: 1px solid rgba(216, 201, 184, 0.9);
+        border-radius: 16px;
+        padding: 12px 12px;
+        background: #fff;
+      }
+      .event-title {
+        margin: 0;
+        font-size: 18px;
+        color: var(--accent);
+        font-family: ui-serif, Georgia, "Times New Roman", serif;
+        font-weight: 750;
+      }
+      .event-meta {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .link {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 10px;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        color: var(--accent-2);
+        text-decoration: none;
+        font-weight: 650;
+      }
+      .link:hover {
+        text-decoration: underline;
+      }
+
+      /* =========================================================
+       4) CARRUSEL (Fotos)
+       ========================================================= */
+      .carousel {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(216, 201, 184, 0.9);
+        background: #fff;
+      }
+      .carousel-viewport {
+        width: 100%;
+        aspect-ratio: 4/5;
+        overflow: hidden;
+        position: relative;
+      }
+      .carousel-track {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        transform: translateX(0%);
+        transition: transform 0.35s ease;
+      }
+      .slide {
+        min-width: 100%;
+        height: 100%;
+        background: #fff;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        cursor: zoom-in;
+      }
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        border: 1px solid rgba(216, 201, 184, 0.95);
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--accent-2);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        user-select: none;
+      }
+      .nav-btn:active {
+        transform: translateY(-50%) scale(0.98);
+      }
+      .nav-btn.prev {
+        left: 10px;
+      }
+      .nav-btn.next {
+        right: 10px;
+      }
+      .dots {
+        display: flex;
+        justify-content: center;
+        gap: 7px;
+        padding: 10px 10px 12px;
+        background: #fff;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(184, 155, 117, 0.35);
+        cursor: pointer;
+      }
+      .dot.active {
+        background: var(--accent);
+      }
+
+      /* =========================================================
+       5) DRESS CODE (2 imágenes)
+       ========================================================= */
+      .dress-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .thumb {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(216, 201, 184, 0.95);
+        background: #fff;
+        cursor: zoom-in;
+        aspect-ratio: 3/4;
+      }
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .caption {
+        margin-top: 8px;
+        text-align: center;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* =========================================================
+       6) LISTAS (Música / RSVP)
+       - UI igual, pero ahora ENVIAMOS a una hoja central (Apps Script)
+       ========================================================= */
+      .mini-list {
+        margin-top: 12px;
+        border: 1px solid rgba(216, 201, 184, 0.9);
+        border-radius: 16px;
+        background: #fff;
+        overflow: hidden;
+      }
+      .mini-item {
+        padding: 12px 12px;
+        border-top: 1px solid rgba(216, 201, 184, 0.55);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        font-size: 14px;
+        color: var(--text);
+        line-height: 1.45;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .mini-item:first-child {
+        border-top: 0;
+      }
+      .mini-muted {
+        color: var(--muted);
+        font-size: 12.5px;
+        margin-top: 4px;
+      }
+      .mini-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .mini-del {
+        border: 1px solid rgba(216, 201, 184, 0.9);
+        background: #fff;
+        color: var(--accent-2);
+        border-radius: 10px;
+        padding: 6px 8px;
+        cursor: pointer;
+        font-weight: 700;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+      }
+
+      /* =========================================================
+       7) MODAL (zoom imágenes)
+       ========================================================= */
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.78);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        z-index: 9999;
+      }
+      .modal.open {
+        display: flex;
+      }
+      .modal-inner {
+        width: min(980px, 100%);
+        height: min(88vh, 820px);
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      .modal-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(0, 0, 0, 0.35);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        font-size: 18px;
+        user-select: none;
+      }
+
+      /* =========================================================
+       8) RESPONSIVE (tablet)
+       ========================================================= */
+      @media (min-width: 720px) {
+        .wrap {
+          padding: 26px 16px 60px;
+        }
+        .hero {
+          min-height: 640px;
+        }
+        h2 {
+          font-size: 34px;
+        }
+        .carousel-viewport {
+          aspect-ratio: 16/11;
+        }
+        .cd-box {
+          min-width: 96px;
+        }
+      }
+      /*==========cierre calas==========*/
+
+      .final {
+        padding: 38px 16px 18px;
+        background: #fbfaf8;
+        text-align: center;
+      }
+      .final__wrap {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .final__names {
+        margin: 26px 0 6px;
+        font-size: 44px;
+        line-height: 1.05;
+        letter-spacing: 0.5px;
+        color: #b9a36a; /* dorado suave */
+        font-family: inherit;
+      }
+      .final__text {
+        margin: 0 0 18px;
+        font-size: 20px;
+        color: #b9a36a;
+      }
+      /* Aquí pon tu imagen de CALAS (arriba y abajo) */
+      /*.final__flowers {
+        height: 105px;
+        background-size: contain;
+        background-repeat: repeat-x;
+        background-position: center;
+        opacity: 0.95;
+      }*/
+      .final__flowers {
+  height: 140px;                 /* más alto = más presencia */
+  background-size: 800px auto;   /* más grande horizontal */
+  background-repeat: no-repeat;  /* NO repetir */
+  background-position: center;
+  opacity: 1;                    /* totalmente visible */
+}
+      .final__flowers--top {
+        background-image: url("assets/img/calas-banner.png");
+      }
+      .final__flowers--bottom {
+        background-image: url("assets/img/calas-banner.png");
+        transform: rotate(180deg);
+      }
+      .final__brand {
+        margin-top: 14px;
+        font-size: 14px;
+        color: #9a8c6a;
+      }
+      /*==========cierre cierre calas==========*/
+
+      /*-----------Flores laterales------*/
+
+      /* Ocultas por defecto (móvil) */
+      .calas-side {
+        display: none;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        width: 240px; /* ancho del adorno */
+        opacity: 0.18; /* sutileza */
+        z-index: 0; /* detrás del contenido */
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        filter: saturate(0.9) contrast(0.95);
+      }
+
+      /* Aparecen desde tablet/PC */
+      @media (min-width: 900px) {
+        .calas-side {
+          display: block;
+        }
+        .calas-left {
+          left: 0;
+          background-image: url("assets/img/calas-left.png");
+          transform: translateX(-10px); /* apenas hacia afuera */
+        }
+        .calas-right {
+          right: 0;
+          background-image: url("assets/img/calas-right.png");
+          transform: translateX(10px);
+        }
+
+        /* Le damos "aire" al contenido para que no se monte encima */
+        body {
+          padding-left: 110px;
+          padding-right: 110px;
+        }
+      }
+
+      /* Para pantallas MUY grandes: un poquito más de marco */
+      @media (min-width: 1300px) {
+        .calas-side {
+          width: 300px;
+          opacity: 0.16;
+        }
+        body {
+          padding-left: 140px;
+          padding-right: 140px;
+        }
+      }
+
+      /* Si tu contenido ya usa un contenedor con z-index, no hace falta esto.
+     Pero por si acaso, asegura que el contenido esté sobre las calas: */
+      main,
+      header,
+      section,
+      footer {
+        position: relative;
+        z-index: 1;
+      }
+
+      /*-----------cierre flores laterales------*/
+      /* =========================================================
+   CALAS DECOR (franja lateral + lavado superior)
+   Requiere estos archivos:
+   assets/img/calas-left.png
+   assets/img/calas-right.png
+   assets/img/calas-banner.png
+   ========================================================= */
+
+.card-floral{
+  position: relative;
+  overflow: hidden;
+}
+
+/* franja lateral (izquierda) */
+.card-floral::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:220px;          /* grosor */
+  height:100%;
+  background-image:url("assets/img/calas-left.png");
+  background-repeat:no-repeat;
+  background-position:left center;
+  background-size:contain;
+  opacity:.95;
+  pointer-events:none;
+  z-index: 0;
+}
+
+/* lavado suave arriba */
+.card-floral::after{
+  content:"";
+  position:absolute;
+  top:-20px;
+  left:0;
+  right:0;
+  height:180px;
+  background-image:url("assets/img/calas-banner.png");
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:700px auto;
+  opacity:.22;
+  pointer-events:none;
+  z-index: 0;
+}
+
+/* el contenido siempre por encima de las flores */
+.card-floral .card-inner{
+  position: relative;
+  z-index: 1;
+  padding-left: 240px;  /* deja espacio para la franja */
+}
+
+/* en móvil: no estorbar, lo hacemos más sutil */
+@media (max-width: 700px){
+  .card-floral::before{
+    width:120px;
+    opacity:.35;
+  }
+  .card-floral .card-inner{
+    padding-left: 140px;
+  }
+  .card-floral::after{
+    height:130px;
+    background-size:520px auto;
+    opacity:.18;
+  }
+}
+    </style>
+
+    <!-- =========================================================
+       CONFIG (edita SOLO aquí si cambian cosas)
+       ========================================================= -->
+    <script>
+      // ------------- PORTADA -------------
+      // ✅ Nic_05: hero fijo a DSC05947.JPG (no dependemos de hero.jpg)
+      const HERO_IMAGE = "assets/img/DSC05947.JPG";
+      const COUPLE_NAME = "Pedro y Nicole";
+      const EVENT_DATE_TEXT = "Sábado 18 Abril 2027";
+
+      // Cuenta regresiva (apunta a la CEREMONIA)
+      // Formato: YYYY-MM-DDTHH:MM:SS (hora local)
+      const COUNTDOWN_TARGET = "2027-04-18T13:45:00";
+
+      // ------------- LISTAS CENTRALIZADAS (Apps Script) -------------
+      // ✅ Nic_05: RSVP + Música se guardan en una hoja real (tipo Canva).
+      // Pega aquí la URL de tu Web App de Google Apps Script (Deploy -> Web App -> Anyone).
+      // Ejemplo: https://script.google.com/macros/s/XXXX/exec
+      // ------------- LISTAS CENTRALIZADAS (Apps Script) -------------
+      const SHEET_ENDPOINT = "";
+      // ----------------- UI helpers (status) -----------------
+      // Evita errores si el status no existe; muestra feedback sin romper el flujo.
+      function showStatus(el, msg, ok) {
+        try {
+          if (!el) return;
+          el.style.display = "block";
+          el.textContent = msg || "";
+          el.style.padding = "10px 12px";
+          el.style.borderRadius = "12px";
+          el.style.marginTop = "10px";
+          el.style.fontSize = "14px";
+          el.style.lineHeight = "1.25";
+          el.style.border = "1px solid rgba(0,0,0,.10)";
+          el.style.background = ok
+            ? "rgba(46, 204, 113, 0.12)"
+            : "rgba(231, 76, 60, 0.12)";
+        } catch (_) {}
+      }
+      // e.g. https://script.google.com/macros/s/AKfy.../exec
+      // ------------- MÚSICA -------------
+      // Para GitHub Pages lo más estable es un MP3 local.
+      const AUDIO_FILE = "assets/audio/tema.mp3";
+      const CLIP_START = 17; // inicio
+      const CLIP_END = 42; // fin
+
+      // ------------- FOTOS PAREJA (carrusel) -------------
+      const COUPLE_PHOTOS = [
+        "assets/img/DSC06064.JPG",
+        "assets/img/DSC05947.JPG",
+        "assets/img/DSC05955.JPG",
+        "assets/img/DSC05975.JPG",
+        "assets/img/DSC05982.JPG",
+        "assets/img/DSC06124.JPG",
+        "assets/img/DSC06137.JPG",
+        "assets/img/DSC06144.JPG",
+      ];
+
+      // ------------- DRESS CODE -------------
+      const DRESS_MEN = "assets/img/dress-hombres.jfif";
+      const DRESS_WOMEN = "assets/img/dress-mujeres.jfif";
+    </script>
+  </head>
+
+  <body>
+    <main class="wrap">
+      <!-- =========================================================
+         1) HERO (Portada)
+         - Imagen + nombres + fecha
+         ========================================================= -->
+      <section class="card hero" id="hero" aria-label="Portada">
+        <!--div class="hero-content">
+        <h1 class="hero-title" id="heroTitle">Pedro y Nicole</h1>
+        <p class="hero-date" id="heroDate">Domingo 18 Abril 2027</p>
+
+        <Cuenta regresiva estilo “reloj” -->
+        <!--div class="countdown" aria-label="Cuenta regresiva">
+          <div class="cd-box">
+            <div class="cd-num" id="cdDays">--</div>
+            <div class="cd-lab">DÍAS</div>
+          </div>
+          <div class="cd-box">
+            <div class="cd-num" id="cdHours">--</div>
+            <div class="cd-lab">HORAS</div>
+          </div>
+          <div class="cd-box">
+            <div class="cd-num" id="cdMins">--</div>
+            <div class="cd-lab">MIN</div>
+          </div>
+          <div class="cd-box">
+            <div class="cd-num" id="cdSecs">--</div>
+            <div class="cd-lab">SEG</div>
+          </div>
+        </div-->
+
+        <!-- Música: botón visible desde portada (tipo Canva) -->
+        <!--div style="margin-top:14px;">        
+          <button class="btn" id="musicToggle" type="button">Reproducir música</button>
+          <p class="sub" style="margin-top:10px;">Si estás en celular, toca el botón para que suene.</p>
+        </div>
+      </div-->
+        <div class="hero-content">
+          <h1 class="hero-title" id="heroTitle">Pedro y Nicole</h1>
+          <p class="hero-date" id="heroDate">Domingo 18 Abril 2027</p>
+        </div>
+      </section>
+      <!-- =========================================================
+         1.2) debajo de la Portada
+                cuenta regresiva + boton de reproducción de música
+         ========================================================= -->
+      <section class="card" id="heroExtras">
+        <div class="card-inner" style="text-align: center">
+          <div class="countdown" aria-label="Cuenta regresiva">
+            <div class="cd-box">
+              <div class="cd-num" id="cdDays">--</div>
+              <div class="cd-lab">DÍAS</div>
+            </div>
+            <div class="cd-box">
+              <div class="cd-num" id="cdHours">--</div>
+              <div class="cd-lab">HORAS</div>
+            </div>
+            <div class="cd-box">
+              <div class="cd-num" id="cdMins">--</div>
+              <div class="cd-lab">MIN</div>
+            </div>
+            <div class="cd-box">
+              <div class="cd-num" id="cdSecs">--</div>
+              <div class="cd-lab">SEG</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 14px">
+            <button class="btn" id="musicToggle" type="button">
+              Reproducir música
+            </button>
+            <p class="sub" style="margin-top: 10px">
+              Si estás en celular, toca el botón para que suene.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Audio oculto (controlado por JS) -->
+      <audio id="bgAudio" preload="auto">
+        <source id="audioSource" src="" type="audio/mpeg" />
+      </audio>
+
+      <!-- =========================================================
+         2) CEREMONIA + CELEBRACIÓN
+         ========================================================= -->
+      <section class="card" id="eventos" aria-label="Ceremonia y Celebración">
+        <div class="card-inner">
+          <div class="card-head">
+            <div class="icon" aria-hidden="true">🗓️</div>
+            <h2>Ceremonia y Celebración</h2>
+            <p class="sub">Fecha, hora y ubicación.</p>
+          </div>
+
+          <div class="event-grid">
+            <!-- CEREMONIA -->
+            <div class="event-box">
+              <span class="pill">Ceremonia</span>
+              <p class="event-title" style="margin-top: 8px">
+                Parroquia Nuestra Señora del Carmen
+              </p>
+              <p class="event-meta">
+                <strong>Domingo 18 Abril 2027</strong><br />
+                1:45pm<br />
+                Mata de plátano
+              </p>
+              <a
+                class="link"
+                href="https://maps.apple/p/fX2YAIX9YdYe38"
+                target="_blank"
+                rel="noopener"
+              >
+                📍 Cómo llegar
+              </a>
+            </div>
+
+            <!-- CELEBRACIÓN -->
+            <div class="event-box">
+              <span class="pill">Celebración</span>
+              <p class="event-title" style="margin-top: 8px">
+                Venue: Vista Capital
+              </p>
+              <p class="event-meta">
+                <strong>Domingo 18 Abril 2027</strong><br />
+                4:00pm
+              </p>
+              <a
+                class="link"
+                href="https://maps.apple/p/KkTTaIGTe4BoH5"
+                target="_blank"
+                rel="noopener"
+              >
+                📍 Cómo llegar
+              </a>
+            </div>
+          </div>
+
+          <div class="notice">
+            <strong>Evento solo para adultos.</strong><br />
+            Para que todos disfruten al máximo, agradecemos no asistir con
+            niños.
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+         3) FOTOS (Carrusel + zoom)
+         ========================================================= -->
+      <section class="card" id="fotos" aria-label="Fotos de la pareja">
+        <div class="card-inner">
+          <div class="card-head">
+            <div class="icon" aria-hidden="true">📷</div>
+            <h2>Fotos</h2>
+            <p class="sub">
+              Desliza o usa las flechas. Toca una foto para ampliarla.
+            </p>
+          </div>
+
+          <div class="carousel" aria-label="Carrusel de fotos">
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="carouselTrack">
+                <!-- Slides se inyectan por JS -->
+              </div>
+
+              <button
+                class="nav-btn prev"
+                id="prevBtn"
+                type="button"
+                aria-label="Anterior"
+              >
+                ‹
+              </button>
+              <button
+                class="nav-btn next"
+                id="nextBtn"
+                type="button"
+                aria-label="Siguiente"
+              >
+                ›
+              </button>
+            </div>
+
+            <div class="dots" id="dots">
+              <!-- Dots se inyectan por JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+         4) MÚSICA (Sugerir canción)
+         ✅ Nic_05: envía a hoja central (Apps Script).
+         - Se mantiene el mismo look.
+         - Guardamos también local como “respaldo” del invitado.
+         ========================================================= -->
+      <section class="card" id="sugerencias" aria-label="Sugerencias de música">
+        <div class="card-inner">
+          <div class="card-head">
+            <div class="icon" aria-hidden="true">🎶</div>
+            <h2>Música</h2>
+            <p class="sub">Demostración del sistema de sugerencias musicales.</p>
+          </div>
+
+          <input
+            class="field"
+            id="songName"
+            type="text"
+            placeholder="Tu nombre (opcional)"
+          />
+          <div style="height: 10px"></div>
+          <input
+            class="field"
+            id="songTitle"
+            type="text"
+            placeholder="Nombre de la canción (ej: Artist - Song)"
+            required
+          />
+          <div style="height: 14px"></div>
+          <button class="btn" id="addSong" type="button" disabled>
+            Agregar a la lista
+          </button>
+
+          <p
+            class="sub"
+            id="songStatus"
+            style="margin-top: 12px; display: none"
+          ></p>
+
+          <div
+            class="mini-list"
+            id="songList"
+            aria-label="Lista de sugerencias"
+          >
+            <!-- Items se inyectan por JS -->
+          </div>
+
+          <p class="sub" style="margin-top: 10px">
+            Proyecto de demostración. El envío de sugerencias está desactivado.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================================================
+         5) DRESS CODE (Gala - Formal) + 2 imágenes + zoom
+         ========================================================= -->
+      <section class="card" id="dresscode" aria-label="Código de vestimenta">
+        <div class="card-inner">
+          <div class="card-head">
+            <div class="icon" aria-hidden="true">👗</div>
+            <h2>Dress code</h2>
+            <p class="sub"><strong>Gala - Formal</strong></p>
+          </div>
+
+          <div class="dress-grid">
+            <div>
+              <div class="thumb" id="dressMenThumb" title="Click para ampliar">
+                <img id="dressMenImg" alt="Ejemplo hombres" />
+              </div>
+              <div class="caption">Hombres (ejemplo)</div>
+            </div>
+
+            <div>
+              <div
+                class="thumb"
+                id="dressWomenThumb"
+                title="Click para ampliar"
+              >
+                <img id="dressWomenImg" alt="Ejemplo mujeres" />
+              </div>
+              <div class="caption">Mujeres (ejemplo)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+         6) TIPS Y NOTAS
+         ========================================================= -->
+      <section class="card" id="tips" aria-label="Tips y notas">
+        <div class="card-inner">
+          <div class="card-head">
+            <div class="icon" aria-hidden="true">📋</div>
+            <h2>Tips y Notas</h2>
+            <p class="sub">Detalles importantes para disfrutar.</p>
+          </div>
+
+          <div class="txt" style="text-align: center">
+            • ¡Por favor ser puntuales!<br /><br />
+            • Queremos que disfrutes de esta fiesta al máximo, por eso decidimos
+            que sea un evento sólo para adultos.<br /><br />
+            • ¡Confirmar asistencia <strong>antes del 30 de marzo 2027</strong>! <br /><br />
+            • Llevar abrigo para disfrutar de los espacios exteriores.<br /><br />
+            • Olvidarse de todo, y ¡¡¡a disfrutar!!!
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+         7) REGALOS
+         ========================================================= -->
+      <section class="card" id="regalos" aria-label="Regalos">
+        <div class="card-inner">
+          <div class="card-head">
+            <div class="icon" aria-hidden="true">🎁</div>
+            <h2>Regalos</h2>
+            <p class="sub">Si deseas contribuir, aquí está la información.</p>
+          </div>
+
+          
+          <div class="txt" style="text-align: center">
+  <p>
+    Los detalles para obsequios se comparten
+    de manera privada.
+  </p>
+  <p>
+    Esta sección es una demostración del
+    diseño original de la invitación.
+  </p>
+          </div>
+
+      </section>
+
+      <!-- =========================================================
+         8) ASISTENCIA (RSVP)
+         ✅ Nic_05: envía a hoja central (Apps Script).
+         - UI igual.
+         - Guardamos también local como respaldo.
+         ========================================================= -->
+      <section
+        class="card"
+        id="asistencia"
+        aria-label="Confirmación de asistencia"
+      >
+        <div class="card-inner">
+          <div class="card-head">
+            <div class="icon" aria-hidden="true">🎉</div>
+            <h2>¿Asistes a la celebración?</h2>
+            <p class="sub">Demostración del sistema de confirmación de asistencia.</p>
+          </div>
+
+          <form id="rsvpForm">
+            <div class="row" role="radiogroup" aria-label="Asistencia">
+              <label class="choice">
+                <input
+                  type="radio"
+                  name="asistencia"
+                  value="Sí, confirmo"
+                  checked
+                />
+                <span>¡Sí! Confirmo</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="asistencia" value="No puedo" />
+                <span>No puedo ☹️</span>
+              </label>
+            </div>
+
+            <input
+              class="field"
+              name="nombre"
+              id="rsvpNombre"
+              type="text"
+              placeholder="Nombre completo"
+              required
+            />
+            <div style="height: 10px"></div>
+            <input
+              class="field"
+              name="nota"
+              id="rsvpNota"
+              type="text"
+              placeholder="Información importante (ej: Soy vegetariano)"
+            />
+            <div style="height: 10px"></div>
+            <input
+              class="field"
+              name="cantidad"
+              id="rsvpCantidad"
+              type="number"
+              min="1"
+              max="10"
+              placeholder="Cantidad de adultos (opcional)"
+            />
+
+            <div style="height: 16px"></div>
+            <button class="btn" type="submit" id="rsvpEnviar" disabled>Enviar</button>
+            <div style="height: 10px"></div>
+            <button class="btn secondary" type="button" id="rsvpVer">
+              Ver mi confirmación
+            </button>
+
+            <p
+              class="sub"
+              id="rsvpEstado"
+              style="margin-top: 12px; display: none"
+            ></p>
+          </form>
+
+          <div
+            class="mini-list"
+            id="rsvpSaved"
+            style="display: none"
+            aria-label="Confirmación guardada"
+          >
+            <!-- se llena por JS -->
+          </div>
+
+          <p class="sub" style="margin-top: 10px">
+  Proyecto de demostración. La confirmación de asistencia está desactivada.
+</p>
+        </div>
+      </section>
+
+      <!-- =================== CIERRE (CALAS) =================== -->
+      <!-- ====================================================== -->
+
+      <section class="card final" id="final">
+        <!--div class="final__wrap"-->
+        <div class="card-inner">
+          <div class="final__flowers final__flowers--top"></div>
+
+          <h2 class="final__names" id="finalNames"></h2>
+          <p class="final__text">¡Los esperamos!</p>
+
+          <div class="final__flowers final__flowers--bottom"></div>
+
+          <p class="final__brand">Desarrollado con ❤️; <span>gabriel-netizen-bit</span></p-->
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================================
+       MODAL (Zoom imágenes)
+       ========================================================= -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-inner">
+        <img class="modal-img" id="modalImg" alt="Imagen ampliada" />
+        <button
+          class="modal-close"
+          id="modalClose"
+          type="button"
+          aria-label="Cerrar"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- ====== CALAS LATERALES (solo tablet/PC) ====== -->
+    <div class="calas-side calas-left" aria-hidden="true"></div>
+    <div class="calas-side calas-right" aria-hidden="true"></div>
+
+    <script>
+      /* =========================================================
+       NIC_05 - LÓGICA
+       - Mantiene estética Nic_04
+       - Agrega: Hero fijo + OG preview + listas centralizadas
+       ========================================================= */
+
+      // --- 1) HERO: setear imagen y textos ---
+      const hero = document.getElementById("hero");
+      // Cache-buster suave para evitar “se quedó pegada la vieja”
+      hero.style.setProperty("--hero-url", `url('${HERO_IMAGE}?v=5')`);
+      document.getElementById("heroTitle").textContent = COUPLE_NAME;
+      document.getElementById("heroDate").textContent = EVENT_DATE_TEXT;
+
+      // --- 2) AUDIO: setear fuente ---
+
+      const audio = document.getElementById("bgAudio");
+      const audioSource = document.getElementById("audioSource");
+      audioSource.src = AUDIO_FILE;
+      audio.load();
+
+      // Música: autoplay suele fallar, usamos botón
+      const musicToggle = document.getElementById("musicToggle");
+      let playing = false;
+
+      function clampClip() {
+        // Loop del fragmento (17s a 42s)
+        if (audio.currentTime < CLIP_START) audio.currentTime = CLIP_START;
+        if (audio.currentTime >= CLIP_END) audio.currentTime = CLIP_START;
+      }
+      audio.addEventListener("timeupdate", clampClip);
+
+      musicToggle.addEventListener("click", async () => {
+        try {
+          if (!playing) {
+            audio.currentTime = CLIP_START;
+            await audio.play(); // requiere interacción del usuario (este botón)
+            playing = true;
+            musicToggle.textContent = "Pausar música";
+          } else {
+            audio.pause();
+            playing = false;
+            musicToggle.textContent = "Reproducir música";
+          }
+        } catch (e) {
+          alert(
+            "El navegador bloqueó el audio. Toca de nuevo o revisa el volumen.",
+          );
+        }
+      });
+
+      // --- 3) MODAL (zoom imágenes) ---
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImg");
+      const modalClose = document.getElementById("modalClose");
+
+      function openModal(src) {
+        modalImg.src = src;
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+      modalClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      // --- 4) CARRUSEL ---
+      const track = document.getElementById("carouselTrack");
+      const dots = document.getElementById("dots");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      let idx = 0;
+
+      function buildCarousel() {
+        track.innerHTML = "";
+        dots.innerHTML = "";
+
+        COUPLE_PHOTOS.forEach((src, i) => {
+          const slide = document.createElement("div");
+          slide.className = "slide";
+
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = `Foto ${i + 1}`;
+          img.addEventListener("click", () => openModal(src));
+
+          slide.appendChild(img);
+          track.appendChild(slide);
+
+          const dot = document.createElement("div");
+          dot.className = "dot" + (i === 0 ? " active" : "");
+          dot.addEventListener("click", () => {
+            idx = i;
+            renderCarousel();
+          });
+          dots.appendChild(dot);
+        });
+
+        renderCarousel();
+      }
+
+      function renderCarousel() {
+        track.style.transform = `translateX(-${idx * 100}%)`;
+        [...dots.children].forEach((d, i) =>
+          d.classList.toggle("active", i === idx),
+        );
+      }
+
+      function next() {
+        idx = (idx + 1) % COUPLE_PHOTOS.length;
+        renderCarousel();
+      }
+      function prev() {
+        idx = (idx - 1 + COUPLE_PHOTOS.length) % COUPLE_PHOTOS.length;
+        renderCarousel();
+      }
+
+      nextBtn.addEventListener("click", next);
+      prevBtn.addEventListener("click", prev);
+
+      // Swipe simple para móvil
+      let startX = 0;
+      track.addEventListener(
+        "touchstart",
+        (e) => {
+          startX = e.touches[0].clientX;
+        },
+        { passive: true },
+      );
+      track.addEventListener("touchend", (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const dx = endX - startX;
+        if (Math.abs(dx) > 40) {
+          if (dx < 0) next();
+          else prev();
+        }
+      });
+
+      buildCarousel();
+
+      // --- 5) DRESS CODE imágenes + zoom ---
+      const dressMenImg = document.getElementById("dressMenImg");
+      const dressWomenImg = document.getElementById("dressWomenImg");
+      dressMenImg.src = DRESS_MEN;
+      dressWomenImg.src = DRESS_WOMEN;
+
+      document
+        .getElementById("dressMenThumb")
+        .addEventListener("click", () => openModal(DRESS_MEN));
+      document
+        .getElementById("dressWomenThumb")
+        .addEventListener("click", () => openModal(DRESS_WOMEN));
+
+      /* =========================================================
+       6) NIC_05: ENVÍO CENTRALIZADO (Apps Script -> Google Sheet)
+       - Sin backend propio, ideal para GitHub Pages.
+       - Si no configuras SHEET_ENDPOINT, no falla: usa respaldo local.
+       ========================================================= */
+      async function sendToSheet(payload) {
+        if (!SHEET_ENDPOINT) {
+          return { ok: false, reason: "NO_ENDPOINT" };
+        }
+        try {
+          // Usamos no-cors para evitar el preflight (Apps Script no responde OPTIONS con CORS).
+          // Ojo: en no-cors no podemos leer respuesta, pero el envío sí se hace.
+          await fetch(SHEET_ENDPOINT, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload),
+          });
+          return { ok: true, reason: "SENT_NO_CORS" };
+        } catch (err) {
+          return { ok: false, reason: "NETWORK" };
+        }
+      }
+      // --- 7) LISTA DE MÚSICA (respaldo local + envío central) ---
+      const songName = document.getElementById("songName");
+      const songTitle = document.getElementById("songTitle");
+      const addSong = document.getElementById("addSong");
+      const songList = document.getElementById("songList");
+      const songStatus = document.getElementById("songStatus");
+
+      const SONG_KEY = "wedding_song_suggestions_v2"; // v2 para no mezclar con pruebas viejas
+
+      function loadSongs() {
+        try {
+          return JSON.parse(localStorage.getItem(SONG_KEY) || "[]");
+        } catch {
+          return [];
+        }
+      }
+      function saveSongs(list) {
+        localStorage.setItem(SONG_KEY, JSON.stringify(list));
+      }
+
+      function renderSongs() {
+        const list = loadSongs();
+        songList.innerHTML = "";
+
+        if (list.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "mini-item";
+          empty.innerHTML = `<div><strong>Lista vacía</strong><div class="mini-muted">Sé el primero en sugerir una canción.</div></div>`;
+          songList.appendChild(empty);
+          return;
+        }
+
+        list.forEach((item, i) => {
+          const row = document.createElement("div");
+          row.className = "mini-item";
+
+          const left = document.createElement("div");
+          left.innerHTML = `<strong>${escapeHtml(item.title)}</strong>
+                          <div class="mini-muted">${item.name ? "Por: " + escapeHtml(item.name) : "Sugerencia"}</div>`;
+
+          const actions = document.createElement("div");
+          actions.className = "mini-actions";
+
+          const del = document.createElement("button");
+          del.className = "mini-del";
+          del.type = "button";
+          del.textContent = "✕";
+          del.addEventListener("click", () => {
+            const newList = loadSongs().filter((_, idx) => idx !== i);
+            saveSongs(newList);
+            renderSongs();
+          });
+
+          actions.appendChild(del);
+          row.appendChild(left);
+          row.appendChild(actions);
+          songList.appendChild(row);
+        });
+      }
+
+      addSong.addEventListener("click", async () => {
+        const title = (songTitle.value || "").trim();
+        const name = (songName.value || "").trim();
+        if (!title) {
+          songTitle.focus();
+          alert("Escribe el nombre de la canción.");
+          return;
+        }
+
+        // 1) Respaldo local (para que el usuario vea feedback inmediato)
+        const list = loadSongs();
+        list.unshift({ title, name, ts: Date.now() });
+        saveSongs(list);
+        renderSongs();
+
+        // 2) Envío central (Apps Script)
+        showStatus(songStatus, "Enviando a la lista central...", true);
+        const resp = await sendToSheet({
+          type: "MUSICA",
+          name,
+          song: title,
+          timestamp: new Date().toISOString(),
+          page: location.href,
+        });
+
+        if (resp.ok) {
+          showStatus(songStatus, "¡Listo! Canción enviada ✅", true);
+        } else {
+          // No asustar: el respaldo local ya quedó guardado.
+          showStatus(
+            songStatus,
+            "Guardado en tu dispositivo. (Aún falta configurar la lista central).",
+            false,
+          );
+        }
+
+        songTitle.value = "";
+      });
+
+      renderSongs();
+
+      // --- 8) RSVP (respaldo local + envío central) ---
+      const rsvpForm = document.getElementById("rsvpForm");
+      const rsvpEstado = document.getElementById("rsvpEstado");
+      const rsvpSaved = document.getElementById("rsvpSaved");
+      const rsvpVer = document.getElementById("rsvpVer");
+
+      const RSVP_KEY = "wedding_rsvp_v2";
+
+      function loadRSVP() {
+        try {
+          return JSON.parse(localStorage.getItem(RSVP_KEY) || "null");
+        } catch {
+          return null;
+        }
+      }
+      function saveRSVP(obj) {
+        localStorage.setItem(RSVP_KEY, JSON.stringify(obj));
+      }
+
+      function renderRSVP() {
+        const data = loadRSVP();
+        if (!data) {
+          rsvpSaved.style.display = "none";
+          rsvpSaved.innerHTML = "";
+          return;
+        }
+        rsvpSaved.style.display = "block";
+        rsvpSaved.innerHTML = `
+        <div class="mini-item">
+          <div>
+            <strong>${escapeHtml(data.nombre)}</strong>
+            <div class="mini-muted">${escapeHtml(data.asistencia)}${data.cantidad ? " · Adultos: " + escapeHtml(String(data.cantidad)) : ""}</div>
+            <div class="mini-muted">${data.nota ? "Nota: " + escapeHtml(data.nota) : ""}</div>
+          </div>
+        </div>
+      `;
+      }
+
+      rsvpForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const asistencia =
+          rsvpForm.querySelector('input[name="asistencia"]:checked')?.value ||
+          "Sí, confirmo";
+        const nombre = (
+          document.getElementById("rsvpNombre").value || ""
+        ).trim();
+        const nota = (document.getElementById("rsvpNota").value || "").trim();
+        const cantidad = (
+          document.getElementById("rsvpCantidad").value || ""
+        ).trim();
+
+        if (!nombre) {
+          alert("Por favor escribe tu nombre.");
+          return;
+        }
+
+        // 1) Respaldo local inmediato
+        const payloadLocal = {
+          asistencia,
+          nombre,
+          nota,
+          cantidad: cantidad ? Number(cantidad) : null,
+          ts: Date.now(),
+        };
+        saveRSVP(payloadLocal);
+
+        // 2) Envío central
+        showStatus(rsvpEstado, "Enviando confirmación...", true);
+        const resp = await sendToSheet({
+          type: "RSVP",
+          attendance: asistencia,
+          name: nombre,
+          note: nota,
+          adults: cantidad ? Number(cantidad) : "",
+          timestamp: new Date().toISOString(),
+          page: location.href,
+        });
+
+        if (resp.ok) {
+          showStatus(rsvpEstado, "¡Listo! Confirmación enviada ✅", true);
+        } else {
+          showStatus(
+            rsvpEstado,
+            "Confirmación guardada en tu dispositivo. (Aún falta configurar la lista central).",
+            false,
+          );
+        }
+
+        rsvpForm.reset();
+        const firstRadio = rsvpForm.querySelector(
+          'input[type="radio"][name="asistencia"]',
+        );
+        if (firstRadio) firstRadio.checked = true;
+
+        renderRSVP();
+      });
+
+      rsvpVer.addEventListener("click", () => {
+        renderRSVP();
+        if (!loadRSVP()) {
+          alert("Aún no hay confirmación guardada en este dispositivo.");
+        } else {
+          rsvpSaved.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      });
+
+      renderRSVP();
+
+      // --- 9) CUENTA REGRESIVA ---
+      const cdDays = document.getElementById("cdDays");
+      const cdHours = document.getElementById("cdHours");
+      const cdMins = document.getElementById("cdMins");
+      const cdSecs = document.getElementById("cdSecs");
+
+      function pad2(n) {
+        return String(n).padStart(2, "0");
+      }
+
+      function tickCountdown() {
+        const target = new Date(COUNTDOWN_TARGET).getTime();
+        const now = Date.now();
+        let diff = target - now;
+
+        if (diff <= 0) {
+          cdDays.textContent = "00";
+          cdHours.textContent = "00";
+          cdMins.textContent = "00";
+          cdSecs.textContent = "00";
+          return;
+        }
+
+        const s = Math.floor(diff / 1000);
+        const days = Math.floor(s / (3600 * 24));
+        const hours = Math.floor((s % (3600 * 24)) / 3600);
+        const mins = Math.floor((s % 3600) / 60);
+        const secs = Math.floor(s % 60);
+
+        cdDays.textContent = pad2(days);
+        cdHours.textContent = pad2(hours);
+        cdMins.textContent = pad2(mins);
+        cdSecs.textContent = pad2(secs);
+      }
+      tickCountdown();
+      setInterval(tickCountdown, 1000);
+
+      // --- Helper: evitar inyección en listas (seguro) ---
+      function escapeHtml(str) {
+        return String(str)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+      document.getElementById("finalNames").textContent = COUPLE_NAME;
+    </script>
+  </body>
+</html>
